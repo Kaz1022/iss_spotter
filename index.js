@@ -32,16 +32,16 @@ const { fetchMyIP, fetchCoordsByIP, fetchISSFlyOverTimes, nextISSTimesForMyLocat
 // Make a function which will show the expected output 
 // "Next pass at Fri Jun 01 2021 13:01:35 GMT-0700 (Pacific Daylight Time) for 465 seconds!"
 
-const printPassTimes = function (passtimes) {
+const printPassTimes = function(passtimes) {
   for (const pass of passtimes) {
     // ?? Shouldnt it be let?? 
-    const datetime = new Date(0);　　// -> returns 1970-01-01T00:00:00.000Z
+    const datetime = new Date(0);// -> returns 1970-01-01T00:00:00.000Z
     //add the passtimes.risetime to datetime object
     datetime.setUTCSeconds(pass.risetime);
     const duration = pass.duration;
     console.log(`Next pass at ${datetime} for ${duration} seconds!`);
   }
-  
+
 };
 
 
